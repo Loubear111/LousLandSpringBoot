@@ -1,13 +1,16 @@
 package com.lousland.louslandspringboot;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
-@RestController
+@Controller
 public class HomeController {
-    @GetMapping("/")
-    public String index() {
-        return "Greetings from Lou's Land!";
+    @GetMapping("/home")
+    public String index(@RequestParam(value="name", required = false) String name, Model model) {
+        model.addAttribute("name", name);
+        return "home";
     }
 }
