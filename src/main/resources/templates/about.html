@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{/fragments/base_layout}">
+<head>
+    <title>About</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <p th:if="${name != null}" th:text="|Greetings from Lou's Land's about page, ${name}!|" />
+    <p th:unless="${name != null}" th:text="|Greetings from Lou's Land's about page!|" />
+</section>
+</body>
+</html>
